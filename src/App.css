@@ -1,38 +1,156 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+}
+body {
+  background: -webkit-linear-gradient(
+      90deg,
+      hsla(160, 14%, 4%, 0.4) 0%,
+      hsla(107, 44%, 8%, 0.4) 100%
+    ),
+    url("./assets/pattern.png") no-repeat center center/cover;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  width: 100vw;
+}
+.link-preview {
+  padding: 20px;
+}
+
+.output {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 5%;
+}
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.form > input {
+  padding: 15px;
+  border-radius: 5px;
+  width: 40%;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.error {
+  color: red;
+}
+.card {
+  margin-top: 35px;
+  background-color: white;
+  width: 30%;
+  min-height: 400px;
+  border-radius: 5px;
+}
+.image {
+  object-fit: cover;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card > a {
+  text-decoration: none;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.hostname {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 15px;
+  color: rgb(207, 199, 199);
+}
+
+.title {
+  margin: 15px;
+}
+.description {
+  margin: 0 15px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin-top: 35px;
+    background-color: white;
+    min-height: 200px;
+    width: 80%;
+    border-radius: 5px;
   }
-  to {
-    transform: rotate(360deg);
+  .form > input {
+    padding: 15px;
+    border-radius: 5px;
+    width: 80%;
+    border: none;
+  }
+  .hostname {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 30px 15px 0 15px;
+    color: rgb(207, 199, 199);
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    margin-top: 35px;
+    background-color: white;
+    width: 80%;
+    min-height: 400px;
+    border-radius: 5px;
+  }
+  .form > input {
+    padding: 15px;
+    border-radius: 5px;
+    width: 80%;
+    border: none;
+  }
+  .hostname {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    padding-top: 50px;
+    color: rgb(207, 199, 199);
+  }
+}
+@media (min-width: 900px) {
+  .card {
+    margin-top: 35px;
+    background-color: white;
+    width: 30%;
+    min-height: 400px;
+    border-radius: 5px;
+  }
+  .form > input {
+    padding: 15px;
+    border-radius: 5px;
+    width: 40%;
+    border: none;
+  }
+  .hostname {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    padding-top: 50px;
+    color: rgb(207, 199, 199);
   }
 }
