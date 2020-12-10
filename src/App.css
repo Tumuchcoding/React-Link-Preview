@@ -79,6 +79,9 @@ body {
   margin: 15px;
   color: rgb(207, 199, 199);
 }
+.icon {
+  margin-right: 5px;
+}
 
 .title {
   margin: 15px;

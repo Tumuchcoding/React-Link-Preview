@@ -25,17 +25,18 @@ function LinkPreview() {
   let url = urlData;
   useEffect(() => {
     const get = async () => {
+      setError(null);
       setIsLoading(true);
       if (url) {
         try {
           const body = await axios.get(
             /// delete cors-link for production, use in development to bypass cors
             "https://cors-anywhere.herokuapp.com/" + url
+            // url
           );
           const html = body.data;
           const metadata = await metascraper({ html, url });
           setPreview(metadata);
-          setError(null);
         } catch (error) {
           setError(error);
         }
@@ -53,10 +54,10 @@ function LinkPreview() {
     <div className="output">
       <Input getUrlData={getUrlData} />
       {error ? (
-        <p className="error">there was an error, please try again</p>
+        <h2 className="error">there was an error, please try again</h2>
       ) : null}
       {isLoading ? (
-        <p>Loading...</p>
+        <h2>Loading...</h2>
       ) : (
         <CardOutput preview={preview} urlData={urlData} />
       )}

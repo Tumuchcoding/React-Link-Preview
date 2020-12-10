@@ -30,7 +30,16 @@ function CardOutput({ preview, urlData }) {
             <div className="content">
               <h2 className="title">{preview.title}</h2>
               <div className="description"> {description}</div>
-              <p className="hostname">{hostname}</p>
+              <p className="hostname">
+                {url && (
+                  <img
+                    className="icon"
+                    src={`https://www.google.com/s2/favicons?domain=${url}`}
+                    alt="icon"
+                  />
+                )}
+                {hostname}
+              </p>
             </div>
           </a>
         </div>
