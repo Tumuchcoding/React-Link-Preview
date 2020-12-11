@@ -9,6 +9,8 @@
   </p>
 </p>
 
+![Demo](https://github.com/Tumuchcoding/React-Link-Preview/blob/master/public/home-gif.gif)
+
 <!-- GETTING STARTED -->
 
 ## Getting Started
